@@ -10,6 +10,13 @@ input.onButtonPressed(Button.B, function () {
     customEditor.addMemo("チョキ：2")
     int_Me = 2
 })
+/**
+ * チョキ
+ * 
+ * グー
+ * 
+ * 　　　　　パー
+ */
 let int_MyCon = 0
 let int_Me = 0
 customEditor.addMemo("「ジャンケン」ゲーム")
