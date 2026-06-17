@@ -37,19 +37,28 @@ for (let index = 0; index < 3; index++) {
 int_Me = 0
 customEditor.addMemo("連続して手を出さなかった回数をｶｳﾝﾄ")
 let int_Count = 0
-basic.showString("GO!")
+music.play(music.tonePlayable(262, music.beat(BeatFraction.Half)), music.PlaybackMode.UntilDone)
+music.rest(music.beat(BeatFraction.Half))
+music.play(music.tonePlayable(262, music.beat(BeatFraction.Half)), music.PlaybackMode.UntilDone)
+music.rest(music.beat(BeatFraction.Half))
+music.play(music.tonePlayable(262, music.beat(BeatFraction.Half)), music.PlaybackMode.UntilDone)
+music.rest(music.beat(BeatFraction.Half))
+music.play(music.tonePlayable(523, music.beat(BeatFraction.Double)), music.PlaybackMode.InBackground)
+basic.showString("GO")
 basic.forever(function () {
     if (int_Count >= 3) {
         customEditor.addMemo("3回以上、手を出さなかったらｹﾞｰﾑｵｰﾊﾞｰ")
         customEditor.addMemo("ﾎﾞﾀﾝA+B で再スタート")
         game.gameOver()
     }
-    basic.pause(2000)
+    basic.pause(1000)
     customEditor.addMemo("「ジャン、ケン、ポン」のタイミングを合わせる音")
+    basic.clearScreen()
     music.play(music.tonePlayable(440, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
     music.rest(music.beat(BeatFraction.Half))
     music.play(music.tonePlayable(392, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
     music.rest(music.beat(BeatFraction.Half))
+    customEditor.addMemo("3つ目の音に合わせてボタンを押す")
     music.play(music.tonePlayable(523, music.beat(BeatFraction.Half)), music.PlaybackMode.UntilDone)
     music.rest(music.beat(BeatFraction.Half))
     basic.pause(1000)
